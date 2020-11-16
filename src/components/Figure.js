@@ -3,6 +3,7 @@ import React from 'react';
 const Figure = () => {
   return (
     <div>
+      {/* Rod */}
       <svg height='250' width='200' class='figure-container'>
         <line x1='60' y1='20' x2='140' y2='20' />
         <line x1='140' y1='20' x2='140' y2='50' />
