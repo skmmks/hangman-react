@@ -7,7 +7,9 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <Figure />
+      <div className='game-container'>
+        <Figure />
+      </div>
     </React.Fragment>
   );
 }
