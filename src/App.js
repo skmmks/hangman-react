@@ -6,6 +6,12 @@ import Word from './components/Word';
 
 import './App.css';
 
+const words = ['application', 'programming', 'interface', 'wizard'];
+
+let selectedWord = words[Math.floor(Math.random() * words.length)];
+
+let playable = true;
+
 function App() {
   return (
     <React.Fragment>
