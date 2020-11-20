@@ -12,6 +12,9 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 let playable = true;
 
+const correctLetters = [];
+const wrongLetters = [];
+
 function App() {
   return (
     <React.Fragment>
