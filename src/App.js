@@ -12,9 +12,6 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 let playable = true;
 
-const correctLetters = [];
-const wrongLetters = [];
-
 function App() {
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
