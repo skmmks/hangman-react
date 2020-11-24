@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Figure from './components/Figure';
 import WrongLetters from './components/WrongLetters';
@@ -11,6 +11,12 @@ const words = ['application', 'programming', 'interface', 'wizard'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 let playable = true;
+
+useEffect(() => {
+  const handleKeydown = (event) => {
+    const { key, keyCode } = event;
+  };
+});
 
 window.addEventListener('keydown', (e) => {
   if (playable) {
