@@ -12,8 +12,6 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 let playable = true;
 
-window.addEventListener('keydown', (e) => {});
-
 function App() {
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
@@ -40,6 +38,10 @@ function App() {
         }
       }
     };
+
+    window.addEventListener('keydown', handleKeydown);
+
+    return () => window.removeEventListener('keydown', handleKeydown);
   });
 
   return (
