@@ -12,42 +12,35 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 let playable = true;
 
-useEffect(() => {
-  const handleKeydown = (event) => {
-    const { key, keyCode } = event;
-  };
-});
-
-window.addEventListener('keydown', (e) => {
-  if (playable) {
-    if (e.keyCode >= 65 && e.keyCode <= 90) {
-      const letter = e.key.toLowerCase();
-
-      if (selectedWord.includes(letter)) {
-        if (!correctLetters.includes(letter)) {
-          correctLetters.push(letter);
-
-          displayWord();
-        } else {
-          showNotification();
-        }
-      } else {
-        if (!wrongLetters.includes(letter)) {
-          wrongLetters.push(letter);
-
-          updateWrongLettersEl();
-        } else {
-          showNotification();
-        }
-      }
-    }
-  }
-});
+window.addEventListener('keydown', (e) => {});
 
 function App() {
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
+
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      const { key, keyCode } = event;
+      if (playable && keyCode >= 65 && keyCode <= 90) {
+        const letter = key.toLowerCase();
+
+        if (selectedWord.includes(letter)) {
+          if (!correctLetters.includes(letter)) {
+            setCorrectLetters((currentLetters) => [...currentLetters, letter]);
+          } else {
+            // showNotification();
+          }
+        } else {
+          if (!wrongLetters.includes(letter)) {
+            setwrongLetters((wrongLetters) => [...wrongLetters, letter]);
+          } else {
+            // showNotification();
+          }
+        }
+      }
+    };
+  });
 
   return (
     <React.Fragment>
