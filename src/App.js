@@ -31,7 +31,7 @@ function App() {
           }
         } else {
           if (!wrongLetters.includes(letter)) {
-            setwrongLetters((wrongLetters) => [...wrongLetters, letter]);
+            setWrongLetters((wrongLetters) => [...wrongLetters, letter]);
           } else {
             // showNotification();
           }
@@ -42,14 +42,14 @@ function App() {
     window.addEventListener('keydown', handleKeydown);
 
     return () => window.removeEventListener('keydown', handleKeydown);
-  });
+  }, [correctLetters, wrongLetters, playable]);
 
   return (
     <React.Fragment>
       <Header />
       <div className='game-container'>
         <Figure />
-        <WrongLetters />
+        <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
     </React.Fragment>
