@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Figure = () => {
+const Figure = ({ wrongLetters }) => {
+  const errors = wrongLetters.length;
+
   return (
     <div>
       <svg height='250' width='200' className='figure-container'>
