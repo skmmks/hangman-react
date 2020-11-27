@@ -56,9 +56,9 @@ function App() {
         <Figure wrongLetters={wrongLetters} />
         <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
-        <Popup />
-        <Notification showNotification={showNotification} />
       </div>
+      <Popup />
+      <Notification showNotification={showNotification} />
     </React.Fragment>
   );
 }
