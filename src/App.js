@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Figure from './components/Figure';
 import WrongLetters from './components/WrongLetters';
 import Word from './components/Word';
+import { showNotification as show } from './helpers/helpers';
 
 import './App.css';
 
@@ -28,13 +29,13 @@ function App() {
           if (!correctLetters.includes(letter)) {
             setCorrectLetters((currentLetters) => [...currentLetters, letter]);
           } else {
-            // showNotification();
+            show(setShowNotification);
           }
         } else {
           if (!wrongLetters.includes(letter)) {
             setWrongLetters((wrongLetters) => [...wrongLetters, letter]);
           } else {
-            // showNotification();
+            show(setShowNotification);
           }
         }
       }
