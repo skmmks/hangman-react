@@ -8,8 +8,8 @@ const Popup = ({ correctLetters, wrongLetters, selectedWord, setPlayable }) => {
   return (
     <div className='popup-container'>
       <div className='popup'>
-        <h2></h2>
-        <h3></h3>
+        <h2>{finalMessage}</h2>
+        <h3>{finalMessageRevealWord}</h3>
         <button>Play Again</button>
       </div>
     </div>
