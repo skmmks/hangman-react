@@ -14,4 +14,8 @@ export function checkWin(correct, wrong, word) {
       status = '';
     }
   });
+
+  if (wrong.length === 6) status = 'lose';
+
+  return status;
 }
